@@ -1,5 +1,5 @@
-UserBundle
-==========
+MessengerBundle
+===============
 
 This bundle is part of the [Harvest Cloud project][1]. It contains the
 Messenger class that notifies users of different system events.
