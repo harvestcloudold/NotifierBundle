@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HarvestCloud\MessengerBundle;
+namespace HarvestCloud\NotifierBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class HarvestCloudMessengerBundle extends Bundle
+class HarvestCloudNotifierBundle extends Bundle
 {
 }

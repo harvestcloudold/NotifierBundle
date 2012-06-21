@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HarvestCloud\MessengerBundle\DependencyInjection;
+namespace HarvestCloud\NotifierBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class HarvestCloudMessengerExtension extends Extension
+class HarvestCloudNotifierExtension extends Extension
 {
     /**
      * {@inheritDoc}
