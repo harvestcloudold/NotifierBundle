@@ -58,17 +58,4 @@ class OrderAcceptedBySellerEvent extends OrderEvent
     {
         return 'HarvestCloudNotifierBundle:Order:order_accepted_by_seller.buyer.email_body.txt.twig';
     }
-
-    /**
-     * getEmailBodyTemplateParameters
-     *
-     * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
-     * @since  2012-06-23
-     *
-     * @return array
-     */
-    public function getEmailBodyTemplateParameters()
-    {
-        return array('order' => $this->getOrder());
-    }
 }

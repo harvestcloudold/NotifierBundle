@@ -10,56 +10,52 @@
 namespace HarvestCloud\NotifierBundle\Events;
 
 use \HarvestCloud\CoreBundle\Entity\Order;
+use \HarvestCloud\NotifierBundle\Events\OrderEvent;
 
 /**
- * OrderEvent
+ * OrderDispatchedBySellerEvent
  *
  * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
  * @since  2012-06-24
  */
-class OrderEvent extends Event
+class OrderDispatchedBySellerEvent extends OrderEvent
 {
     /**
-     * @var \HarvestCloud\CoreBundle\Entity\Order
-     */
-    protected $order;
-
-    /**
-     * __construct()
-     *
-     * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
-     * @since  2012-06-21
-     *
-     * @param  \HarvestCloud\CoreBundle\Entity\Order $order
-     */
-    public function __construct(Order $order)
-    {
-        $this->order        = $order;
-    }
-
-    /**
-     * getOrder
-     *
-     * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
-     * @since  2012-06-23
-     *
-     * @return \HarvestCloud\CoreBundle\Entity\Order
-     */
-    public function getOrder()
-    {
-        return $this->order;
-    }
-
-    /**
-     * getEmailBodyTemplateParameters
+     * getEmailTo
      *
      * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
      * @since  2012-06-23
      *
      * @return array
      */
-    public function getEmailBodyTemplateParameters()
+    public function getEmailTo()
     {
-        return array('order' => $this->getOrder());
+        return array('buyer@example.com' => 'Buyer Name');
+    }
+
+    /**
+     * getEmailSubject
+     *
+     * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
+     * @since  2012-06-23
+     *
+     * @return string
+     */
+    public function getEmailSubject()
+    {
+        return 'Your order has been dispatched';
+    }
+
+    /**
+     * getEmailBodyTemplateName
+     *
+     * @author Tom Haskins-Vaughan <tom@harvestcloud.com>
+     * @since  2012-06-23
+     *
+     * @return string
+     */
+    public function getEmailBodyTemplateName()
+    {
+        return 'HarvestCloudNotifierBundle:Order:order_dispatched_by_seller.buyer.email_body.txt.twig';
     }
 }
