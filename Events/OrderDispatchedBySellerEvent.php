@@ -30,7 +30,13 @@ class OrderDispatchedBySellerEvent extends OrderEvent
      */
     public function getEmailTo()
     {
-        return array('buyer@example.com' => 'Buyer Name');
+        $emailAddresses = array();
+
+        foreach ($this->getOrder()->getBuyer()->getUsers() as $user) {
+            $emailAddresses[] = $user->getEmail();
+        }
+
+        return $emailAddresses;
     }
 
     /**

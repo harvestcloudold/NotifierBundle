@@ -1,7 +1,7 @@
 {% extends 'HarvestCloudEmailBundle:Buyer:layout.txt.twig' %}
 
 {% block buyer_content %}
-Hi Tom,
+Hi {{ order.buyer.users.0.firstname }},
 
 Your order has been accepted by {{ order.seller.name }}.
 
